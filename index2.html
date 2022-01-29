@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .workingarealarge {
+            border: 2px solid red;
+            height: 400px;
+        }
+        .btn{
+            padding:10px;
+            border: none;
+            border-radius: 2px;
+            background-color: rgb(51, 196, 51);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>hello world</h1>
+    <button type="button" class="btn" draggable="true">navbar</button>
+    <button type="button" class="btn " draggable="true">textarea</button>
+    <button type="button" class="btn " draggable="true">button</button>
+    <button type="button" class="btn " draggable="true">form</button>
+    <button type="button" class="btn " draggable="true">card</button>
+    <button type="button" class="btn " draggable="true">footer</button>
+    <button type="button" class="btn " draggable="true">table</button>
+    <button type="button" class="btn " draggable="true">attribute</button>
+
+    <div class="workingarealarge" ondragover="return false" ondragover="event.preventDefault()">
+    </div>
+</body>
+
+<script>
+    const id = document.querySelectorAll('btn');
+    let wa=document.querySelector('.workingarealarge');
+
+    wa.addEventListener('drop', (e) => {
+            console.log('Drop has been triggered');
+            wa.innerHTML = `<nav style="background-color: blueviolet;">
+        <ul style="display: flex; list-style: none;">
+            <li style="padding: 4px;">home</li>
+            <li style="padding: 4px;">about</li>
+            <li style="padding: 4px;">services</li>
+            <li style="padding: 4px;">contact us</li>
+        </ul>
+    </nav>`;
+    })
+</script>
+
+</html>
