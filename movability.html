@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>droppable demo</title>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <style>
+        #div1 {
+            width: 900px;
+            height: 900px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+        .btn{
+            padding:10px;
+            border: none;
+            border-radius: 2px;
+            background-color: rgb(51, 196, 51);
+        }
+    </style>
+</head>
+
+<body>
+    <nav style="background-color: blueviolet;" id="navbar">
+        <ul style="display: flex; list-style: none;" >
+            <li style="padding: 4px;">home</li>
+            <li style="padding: 4px;">about</li>
+            <li style="padding: 4px;">services</li>
+            <li style="padding: 4px;">contact us</li>
+        </ul>
+    </nav>
+    <img id="image" src="http://res.cloudinary.com/demo/image/upload/w_300,h_200,c_crop/sample.jpg" style="height:120px ;width:120px;"/>
+    <button type="button" id="btn">button</button>
+    <div id="card" style="height: 150px; width:150px;">
+        <div class="container" style="border: 2px solid black;">
+          <h4><b>this is a card</b></h4>
+        </div>
+    </div>
+    <footer id="footer" style="border: 2px solid black">
+        <p>this is a footer</p>
+        <p><a href="abc@example.com">hege@example.com</a></p>
+      </footer>
+    <div id="div1" >Drop here</div>
+
+</body>
+
+<script>
+    $( "#image" ).draggable();
+    $('#navbar').draggable();
+    $("#card").draggable();
+    $("#footer").draggable();
+    $("#btn").draggable();
+        $( "#div1" ).droppable({
+          drop: function(ev,ui) {
+        	  ev.preventDefault();
+        	 
+        	  var data = ui.draggable.attr("id");
+        
+        	    ev.target.appendChild(document.getElementById(data));
+        	    // $("#"+data).css({top: ui.offset.top, left: ui.offset.left, position:'relative'});
+          }
+        });
+</script>
+
+</html>
