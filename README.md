@@ -3,5 +3,5 @@
 We've implemented the Drag and Drop functions individually and are yet to integrate.
 
 Tech Stack: HTML, CSS and Basic JavaScript.
-No ccomplex Frameworks were used.
+No complex Frameworks were used and the code is in the most generic form.
 
